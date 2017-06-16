@@ -15,16 +15,40 @@
  */
 package com.example.android.miwok;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+    }
+
+    @OnClick(R.id.colors)
+    public void onColorsClick(View view) {
+        startActivity(new Intent(this, ColorsActivity.class));
+    }
+
+    @OnClick(R.id.family)
+    public void onFamilyClick(View view) {
+        startActivity(new Intent(this, FamilyMembersActivity.class));
+    }
+
+    @OnClick(R.id.numbers)
+    public void onNumbersClick(View view) {
+        startActivity(new Intent(this, NumbersActivity.class));
+    }
+
+    @OnClick(R.id.phrases)
+    public void onPhrasesClick(View view) {
+        startActivity(new Intent(this, PhrasesActivity.class));
     }
 }
